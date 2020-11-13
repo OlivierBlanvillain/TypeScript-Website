@@ -25,7 +25,7 @@ type Bar = RegExp extends Animal ? number : string;
 //   ^?
 ```
 
-Conditional types take a form that looks a little like conditional expresions (`cond ? trueExpression : falseExpression`) in JavaScript:
+Conditional types take a form that looks a little like conditional expressions (`cond ? trueExpression : falseExpression`) in JavaScript:
 
 ```ts twoslash
 type SomeType = any;
@@ -110,7 +110,7 @@ let c = createLabel(Math.random() ? "hello" : 42);
 ### Conditional Type Constraints
 
 Often, the checks in a conditional type will provide us with some new information.
-Just like with narrowing with type guards can give us a more specific type, the true branch of a conditional type will further constraint generics by the type we check against.
+Just like with narrowing type guards can give us a more specific type, the true branch of a conditional type will further constraint generics by the type we check against.
 
 For example, let's take the following:
 
@@ -189,7 +189,7 @@ For example, we could have inferred the element type in `Flatten` instead of fet
 type Flatten<T> = T extends Array<infer U> ? U : T;
 ```
 
-Here, we used the `infer` keyword declaratively introduced a new generic type variable named `U` instead of specifying how to retrieve the element type of `T`.
+Here, we used the `infer` keyword to declaratively introduce a new generic type variable named `U` instead of specifying how to retrieve the element type of `T`.
 Within the true branch
 This frees us from having to think about how to dig through and probing apart the structure of the types we're interested.
 
